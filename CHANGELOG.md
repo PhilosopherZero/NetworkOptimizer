@@ -1,5 +1,32 @@
 # 🧾 Changelog
 
+## [0.3.0] - 2026-08-30
+
+### ✨ New Features
+- 🎛️ Added profile selector — available profiles: Wi-Fi Latency, Ethernet Latency, and Wi-Fi Download
+- 📶 Added Wi-Fi Download profile — optimized for throughput
+- 🌐 Added IPv6 preference dropdown — choose IPv6 off, priority over IPv4, or the opposite
+- 🧠 Added RSS base CPU optimization — dynamically picks the RSS starting core from detected CPU topology instead of blindly setting a static value (see optimizations.md)
+- 📊 Info tab now shows the interface metric for the primary adapter (better diagnosis)
+- ➕ Added more optimizations (e.g. TcpMaxDupAcks)
+
+### 🧩 Fixes & Improvements
+- 🔍 DNS optimization is now more transparent — each tested DNS server's score and stats (latency, loss, rank) are shown live in the console, followed by a full leaderboard and the chosen primary/secondary DNS
+- ⚙️ Congestion controller selection converted from input box to dropdown
+- 🔘 All action buttons now reflect state — they gray out while their task is running
+- 📡 All actions now report progress in the status bar (previously only a few did)
+- 💬 All action buttons now show a description on hover explaining what each action does
+- 🌍 Fixed wrong IPv6 optimization — now recommends configuring and enabling IPv6 for better performance, as some servers and CDN nodes are dedicated to IPv6 and it can bypass CGNAT, among other benefits
+
+
+### ⚡ Performance
+- 🚀 App starts up faster and detects system info faster
+- ⚡ Actions such as Auto Optimize and Reset to Default show change diffs faster
+
+### 🛡️ Security & Compatibility
+- 🛡️ Improved antivirus compatibility — reduced false-positive detections by removing unnecessary behaviors that could trigger heuristic antivirus analysis
+🔏 Added executable signing — release executables are now Authenticode-signed to provide signature-based file integrity verification and identify the signing certificate
+
 ## [0.2.0] - 2026-06-21
 
 ### ✨ New Features
