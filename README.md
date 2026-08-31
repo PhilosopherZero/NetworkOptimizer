@@ -1,138 +1,86 @@
-# EtherifyZero NetworkOptimizer (BETA)
-Smart Windows 10/11 latency desktop optimizer that benchmarks, auto-tunes, and stabilizes your network for gaming and real-time performance. Improves ping, jitter, and throughput across Wi-Fi and Ethernet using intelligent UDP/TCP optimization.
+# ⚡ Etherify Zero
 
+**Etherify Zero** is a smart Windows 10/11 network optimizer for **latency, jitter, throughput, and stability**. It detects your hardware and network type, benchmarks where needed, and applies the appropriate optimizations for Wi Fi or Ethernet.
 
-## License
-This software is proprietary and not open-source.  
-Redistribution, modification, or resale is prohibited without explicit permission.  
-See [License.txt](./License.txt) for details.
+Profiles are selected automatically based on hardware and network type, with manual override available when needed.
 
-## 💬 Join the Community
-Join our Discord to share feedback, report bugs, or discuss network optimization ideas!  
-👉 [Join NetworkOptimizer Discord](https://discord.gg/CxKqr6sexW)
+Every change can be reviewed before applying, restored to Windows defaults, or rolled back using a system restore point.
+
+🌐 **Website:** https://etherifyzero.com/
 
 ## 🚀 Features
+
 full desktop gui
 <img width="1018" height="597" alt="after optimizer+dns" src="https://github.com/user-attachments/assets/3b34c1bb-02c3-4e72-b8f0-a0244131e23c" />
 
-# ⚡ Etherify Zero
+### ⚙️ Core Optimizations
 
-**Etherify Zero** is a one-click network optimizer for Windows 10 and 11. It reads your hardware and needs — Wi-Fi or Ethernet, low latency, faster downloads, or stability — and picks the right profile to tune your network: **Wi-Fi Latency**, **Ethernet Latency**, or **Wi-Fi Download**.
+**Auto Optimize** — automatic profile detection and full optimization
 
-Every change can be previewed before applying, restored to Windows defaults, or rolled back with a system restore point.
+**CPU / RSS** — dynamically selects an RSS starting CPU from physical CPU topology instead of using a fixed processor number
 
-## ⚙️ Core Optimizations
-- 🧠 **Auto Optimize** – one-click profile detection + full optimization
-- 🧠 **CPU / RSS** – routes network traffic to the best core, away from busy core 0, for stable networking
-- 🌐 **MTU detection** – finds the best packet size, fast and accurate (~16s avg), preventing fragmentation and packet loss
-- 🧩 **DNS optimization** – picks the lowest-latency, most stable resolvers (~6 mins avg)
-- 🔧 **TCP optimization** – faster, more reliable connections
-- ⚙️ **IPv6 preference** – control IPv6 vs IPv4
+**MTU Detection** — finds and verifies the largest usable packet size in ~16 seconds on average
 
-## 🧰 Network Tools
-- 🔁 **Adapter restart** – quick and hard resets
-- 🧹 **Cache reset** – clears DNS, ARP, Winsock
-- ⚙️ **Reset to defaults** – restore original Windows network settings
+**DNS Optimization** — benchmarks Cloudflare, Google, Quad9, OpenDNS, and AdGuard DNS and applies the best two based on latency and stability
 
-## 📏 Custom Settings
-- Set custom MTU / MTU 1280 preset / show current MTU
-- Pick congestion controller
-- Show TCP settings (coming back soon)
+**TCP Optimization** — profile based TCP tuning for latency, throughput, and stability
 
-## 📈 Benchmarking & Diagnostics
-- Latency, jitter, and DNS measurement
-- Assess performance and diagnose issues with plain-language results
-- Benchmark history – compare performance over time
+**IPv6 Preference** — choose IPv6 preference, IPv4 preference, or disable IPv6 transition mechanisms
 
-## 📊 Info & System
-- 📊 **Info tab** – full system + adapter details (CPU, RAM, GPU, IP, DNS, MTU, Wi-Fi signal)
-- 🏠 **Home page** – key actions, adapter info, profile status, pinned tools, recommendations
-- 💾 **Backups** – create named restore points, roll back safely
-- 🚀 Start after login
-- 📌 Pin favorite tools
-- 🔴 Restart-required indicator
-- 👀 Change review popup before applying
-- 📡 Live status bar for background tasks
+### 📶 Profiles
+
+**Wi Fi Latency** — optimized for low latency and stability
+
+**Ethernet Latency** — optimized for responsiveness
+
+**Wi Fi Download** — optimized for throughput
+
+Profiles are selected automatically and can be manually overridden from the profile selector.
+
+### 🧰 Network Tools
+
+**Adapter Restart** — quick and hard restart options
+
+**Cache Reset** — DNS, ARP, and Winsock
+
+**Reset to Defaults** — restore Windows networking and congestion settings
+
+**Custom MTU** — view or manually set MTU, including a 1280 preset
+
+**Congestion Controller** — manually select the congestion control algorithm
+
+### 📈 Benchmarking & Diagnostics
+
+**Latency, jitter, and DNS benchmarking**
+
+**Performance scores and rankings**
+
+**Benchmark history**
+
+**Plain language diagnostics**
+
+### 📊 System Information
+
+**Info Tab** — detailed CPU, RAM, GPU, IP, DNS, MTU, adapter, Wi Fi signal, interface metric, and other system and network information
+
+### 🖥️ Application
+
+**Home** — key actions, adapter information, profile status, pinned tools, and recommendations
+
+**Backups** — named system restore points and rollback
+
+**Review Changes** — preview changes before applying
+
+**Restart Indicator** — shows when changes require a restart
+
+**Live Status** — background operation status
+
+**Start on Login** — optional delayed startup
 
 ## 🧩 System Integration
 - Windows 10 & 11 detection (optimize-aware)
 - Wi-Fi & Ethernet detection (optimize-aware)
 - Near 0% CPU / GPU use when idle
-
-
-# ⚙️ Etherify Zero — Optimizations
-
-Settings are chosen per hardware and per profile (Wi-Fi Latency / Ethernet Latency / Wi-Fi Download).
-
-## TCP
-- Auto-tuning – adapts the receive window to connection speed
-- Pacing profile – smooths traffic for stable latency
-- ECN – detects congestion earlier
-- Fast Open – faster connection setup
-- Hystart – controls slow-start behavior to reduce overly aggressive ramp-up
-- PRR – faster loss recovery
-- Duplicate ACK handling – consistent recovery under loss
-- Timestamps – clearer round-trip measurement
-- Min RTO – quicker retransmit timing
-- Initial congestion window – better start speed
-- RACK / Tail Loss Probe – improves detection and recovery from certain losses
-- Delayed ACK – tuned ACK timing
-- Congestion controller – best algorithm for your OS
-
-## Windows Stack
-- Default TTL – standard packet lifetime
-- MTU discovery – prevents fragmentation
-- Selective ACK (SACK) – efficient recovery
-- TIME-WAIT – faster socket reuse
-- Network throttling index – reduced throttling
-- System responsiveness – stays snappy under load
-- Name resolution priority – faster lookups
-
-## Profiles
-- Wi-Fi Latency – favors stable low latency Wi-Fi environment 
-- Ethernet Latency – favors responsiveness
-- Wi-Fi Download – favors throughput
-
-## Auto Optimize
-- Order: DNS (optional) → congestion → MTU → RSS core → profile + cache reset
-
-## MTU
-- Finds the largest usable packet size — fast, accurate, verified
-- Falls back to a conservative size if unverifiable
-
-## DNS
-- Benchmarks well-known and current resolvers
-- Applies best two as primary / secondary
-
-## CPU / RSS
-- RSS base CPU – dynamically selects the first logical processor of the second physical CPU core as the RSS starting point, keeping RSS off core 0. (Windows / app bloat) for stable networking rather than assuming a fixed CPU number
-- Windows CPU topology detection – detects physical cores, logical
-  processors, SMT, and efficiency classes
-- SMT-aware logical processor mapping
-- Global NDIS RSS configuration
-
-## Benchmarking
-- Latency / jitter / DNS measurement with score + rank
-- Used to assess performance and diagnose
-- Benchmark history – compare performance over time
-
-## Tools
-- Adapter restart (quick) – reset primary adapter
-- Adapter restart (hard) – disable, 3s wait, re-enable
-- Cache reset – DNS, ARP, Winsock
-- Reset to default – restore Windows + congestion defaults
-
-## Custom
-- Set MTU / MTU 1280 / show MTU
-- IPv6 preference – IPv6 > IPv4, prefer IPv4, or disable IPv6 transition (native stays on)
-- Set congestion controller – manual pick instead of auto
-
-## System Integration
-- OS detection (Win 10 / 11) – tunes accordingly
-- Network detection (Wi-Fi / Ethernet) – matches profile
-- Info tab – full system + adapter details
-- Restore point backups
-- Review popup / restart indicator
 
 ## ⭐ Optimization Philosophy
 
@@ -146,7 +94,24 @@ different tradeoffs.
 All optimizations can be reviewed before application and restored
 through the application's reset/backup mechanisms.
 
-## changelog 
+## 📚 Documentation
 
-[CHANGELOG.md](./CHANGELOG.md)
+**[FEATURES.md](./FEATURES.md)** — complete feature and capability list
 
+**[OPTIMIZATIONS.md](./OPTIMIZATIONS.md)** — detailed optimization reference
+
+**[CHANGELOG.md](./CHANGELOG.md)** — version history
+
+## 💬 Community
+
+Join the Etherify Zero Discord to report bugs, share feedback, and discuss network optimization.
+
+👉 **[Join the Etherify Zero Discord](https://discord.gg/CxKqr6sexW)**
+
+## 📄 License
+
+Etherify Zero is proprietary software and is not open source.
+
+Redistribution, modification, or resale is prohibited without explicit permission.
+
+See **[License.txt](./License.txt)** for details.
