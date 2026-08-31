@@ -1,4 +1,4 @@
-# ⚡ Etherify Zero
+# ⚡ Etherify Zero (beta)
 
 **Etherify Zero** is a smart Windows 10/11 network optimizer for **latency, jitter, throughput, and stability**. It detects your hardware and network type, benchmarks where needed, and applies the appropriate optimizations for Wi Fi or Ethernet.
 
